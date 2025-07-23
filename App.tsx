@@ -1,31 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, TextInput, View } from "react-native";
-import { useState } from "react";
-import { sum } from "sum-lib";
+import { StyleSheet, View, Button } from "react-native";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  const [a, setA] = useState("");
-  const [b, setB] = useState("");
-
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <TextInput
-        style={styles.input}
-        value={a}
-        onChangeText={setA}
-        selectTextOnFocus
-      />
-      <Text style={styles.text}>+</Text>
-      <TextInput
-        style={styles.input}
-        value={b}
-        onChangeText={setB}
-        selectTextOnFocus
-      />
-      <Text style={styles.text}>
-        = {sum(parseFloat(a), parseFloat(b)) || "?"}
-      </Text>
+
+      <Button title="Try NativeScript" onPress={() => {
+        const hello = NSString.alloc().initWithString("Hello");
+        const helloWorld = hello.stringByAppendingString(', world!');
+        console.log(helloWorld);
+      }} />
     </View>
   );
 }
@@ -37,17 +23,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-  },
-  text: {
-    fontSize: 20,
-    textAlign: "center",
-  },
-  input: {
-    fontSize: 20,
-    textAlign: "center",
-    minWidth: 100,
-    borderBottomWidth: 1,
-    borderColor: "#aaa",
-    margin: 10,
   },
 });

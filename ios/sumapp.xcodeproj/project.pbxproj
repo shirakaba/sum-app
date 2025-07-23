@@ -247,11 +247,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-sumapp/Pods-sumapp-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+				"${PODS_ROOT}/hermes-engine/destroot/Library/Frameworks/ios/hermes.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/react-native-node-api/-nativescript-ios-node-api--NativeScript.framework/-nativescript-ios-node-api--NativeScript",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/react-native-node-api/sum-lib--sum.framework/sum-lib--sum",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/react-native-node-api/weak-node-api.framework/weak-node-api",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/-nativescript-ios-node-api--NativeScript.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sum-lib--sum.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/weak-node-api.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

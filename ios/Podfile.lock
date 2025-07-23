@@ -68,8 +68,16 @@ PODS:
   - fmt (11.0.2)
   - glog (0.3.5)
   - hermes-engine (0.79.5):
-    - hermes-engine/Pre-built (= 0.79.5)
-  - hermes-engine/Pre-built (0.79.5)
+    - hermes-engine/cdp (= 0.79.5)
+    - hermes-engine/Hermes (= 0.79.5)
+    - hermes-engine/inspector (= 0.79.5)
+    - hermes-engine/inspector_chrome (= 0.79.5)
+    - hermes-engine/Public (= 0.79.5)
+  - hermes-engine/cdp (0.79.5)
+  - hermes-engine/Hermes (0.79.5)
+  - hermes-engine/inspector (0.79.5)
+  - hermes-engine/inspector_chrome (0.79.5)
+  - hermes-engine/Public (0.79.5)
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -1394,6 +1402,30 @@ PODS:
     - React-jsiexecutor
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
+  - react-native-node-api (0.3.2):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-hermes
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - React-NativeModulesApple (0.79.5):
     - glog
     - hermes-engine
@@ -1767,6 +1799,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
+  - react-native-node-api (from `../node_modules/react-native-node-api`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-oscompat (from `../node_modules/react-native/ReactCommon/oscompat`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1896,6 +1929,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
+  react-native-node-api:
+    :path: "../node_modules/react-native-node-api"
   React-NativeModulesApple:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios"
   React-oscompat:
@@ -1975,7 +2010,7 @@ SPEC CHECKSUMS:
   FBLazyVector: d2a9cd223302b6c9aa4aa34c1a775e9db609eb52
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
-  hermes-engine: f03b0e06d3882d71e67e45b073bb827da1a21aae
+  hermes-engine: 2eea94073484b933bfdfa5e9f9c2eb2e149c8364
   RCT-Folly: 36fe2295e44b10d831836cc0d1daec5f8abcf809
   RCTDeprecation: 5f638f65935e273753b1f31a365db6a8d6dc53b5
   RCTRequired: 8b46a520ea9071e2bc47d474aa9ca31b4a935bd8
@@ -2007,6 +2042,7 @@ SPEC CHECKSUMS:
   React-logger: e6e6164f1753e46d1b7e2c8f0949cd7937eaf31b
   React-Mapbuffer: 5b4959cbd91e7e8fae42ab0f4b7c25b86fd139a1
   React-microtasksnativemodule: 1695ab137281dd03de967b7bbeb4e392601f6432
+  react-native-node-api: c5ec07dbc674624cbf3d84dbf23c1f0a256cd74f
   React-NativeModulesApple: 3ecc647742d33ad617bd2805902e3f91f2b3008f
   React-oscompat: 0592889a9fcf0eacb205532028e4a364e22907dd
   React-perflogger: 634408a9a0f5753faa577dfa81bc009edca01062
