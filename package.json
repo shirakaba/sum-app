@@ -14,13 +14,16 @@
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-native": "0.79.5",
-    "react-native-node-api": "^0.3.2",
+    "react-native-node-api": "file:../react-native-node-api-modules/packages/host/react-native-node-api-0.3.2.tgz",
     "sum-lib": "file:../sum-lib"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",
     "typescript": "~5.8.3"
+  },
+  "overrides": {
+    "react-native-node-api": "file:../react-native-node-api-modules/packages/host/react-native-node-api-0.3.2.tgz"
   },
   "private": true
 }
