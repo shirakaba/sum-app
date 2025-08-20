@@ -11,6 +11,7 @@
 		281A4727270A8BAD8EB20794 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 240EA2C428B4E631E8E83F1B /* PrivacyInfo.xcprivacy */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		6ACD53C6A27AF4C36EA98DCD /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C434D4EF09D1B5FEFE2F39B /* ExpoModulesProvider.swift */; };
+		7DBEBE1D2E554BA80086D7AD /* metadata.nsmd in Resources */ = {isa = PBXBuildFile; fileRef = 7DBEBE1C2E554BA80086D7AD /* metadata.nsmd */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		C405AAC8EDBEA354A83704D1 /* libPods-sumapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69E5851059A68857DFB650F /* libPods-sumapp.a */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
@@ -20,7 +21,8 @@
 		13B07F961A680F5B00A75B9A /* sumapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sumapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = sumapp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = sumapp/Info.plist; sourceTree = "<group>"; };
-		240EA2C428B4E631E8E83F1B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = sumapp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		240EA2C428B4E631E8E83F1B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = sumapp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7DBEBE1C2E554BA80086D7AD /* metadata.nsmd */ = {isa = PBXFileReference; lastKnownFileType = file; name = metadata.nsmd; path = ../metadata.nsmd; sourceTree = "<group>"; };
 		8C434D4EF09D1B5FEFE2F39B /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-sumapp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = sumapp/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				7DBEBE1C2E554BA80086D7AD /* metadata.nsmd */,
 				13B07FAE1A68108700A75B9A /* sumapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -119,7 +122,6 @@
 				F02D79EFC8B6223CEF19B796 /* Pods-sumapp.debug.xcconfig */,
 				C3F7582AA1B037397610CBB3 /* Pods-sumapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -193,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBEBE1D2E554BA80086D7AD /* metadata.nsmd in Resources */,
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
@@ -449,10 +452,7 @@
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -507,10 +507,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
