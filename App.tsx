@@ -7,17 +7,17 @@ export default function App() {
       <StatusBar style="auto" />
 
       <Button
-        title="Try NativeScript"
+        title="Try NativeScript in React Native"
         onPress={() => {
           console.log(`[JS onPress] isMainThread: ${NSThread.isMainThread}`);
 
-          // Cross over to the UI thread to show a UIAlert
+          // Cross over to the UI thread to show a native alert.
           NSOperationQueue.mainQueue.addOperationWithBlock(() => {
             console.log(
               `[native operation] isMainThread: ${NSThread.isMainThread}`
             );
 
-            // Build the UIAlert
+            // Initialise the native alert...
             const alertController =
               UIAlertController.alertControllerWithTitleMessagePreferredStyle(
                 "Hype alert",
@@ -32,21 +32,23 @@ export default function App() {
               )
             );
 
-            // Show the UIAlert
+            // ... And show it!
             const { rootViewController } =
               UIApplication.sharedApplication.keyWindow;
             rootViewController.presentViewControllerAnimatedCompletion(
               alertController,
               true,
               () => {
+                // On completion, we're still on the UI thread:
                 console.log(
                   `[native completion] isMainThread: ${NSThread.isMainThread}`
                 );
+                // ... But can get back to the JS thread if needed!
                 setTimeout(() => {
                   console.log(
                     `[JS timeout] isMainThread: ${NSThread.isMainThread}`
                   );
-                }, 1000);
+                }, 0);
               }
             );
           });
