@@ -14,6 +14,7 @@
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
 		7904B3D4E7E03C0228AAE8A6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD8C372CD34F36844A2801 /* PrivacyInfo.xcprivacy */; };
 		C7A7B5EA67357898C89CF81B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD8C372CD34F36844A2801 /* PrivacyInfo.xcprivacy */; };
+		F4201ADD238AE82876E5965D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E9B5E52AB2CC641E3EA98 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		514201592437B4B40078DB4F /* sum-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "sum-app.entitlements"; sourceTree = "<group>"; };
 		69DA42A9AB88045527EB294B /* Pods-sum-app-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sum-app-macOS.debug.xcconfig"; path = "Target Support Files/Pods-sum-app-macOS/Pods-sum-app-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A42E9B5E52AB2CC641E3EA98 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-sum-app-macOS/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		B556C2B0CD7F1775B15D4260 /* Pods-sum-app-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sum-app-macOS.release.xcconfig"; path = "Target Support Files/Pods-sum-app-macOS/Pods-sum-app-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		BDAC20753C58C81E258E1C35 /* libPods-sum-app-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sum-app-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		497F62CE4076184A86A1B810 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				E39437B5734FAA12CC19E72E /* sum-app-macOS */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		5142014A2437B4B30078DB4F /* sum-app-macOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4FCD8C372CD34F36844A2801 /* PrivacyInfo.xcprivacy */,
 				9F2F74D2C3A9196DA4B4A3FA /* Pods */,
+				497F62CE4076184A86A1B810 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -114,6 +125,14 @@
 			);
 			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E39437B5734FAA12CC19E72E /* sum-app-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				A42E9B5E52AB2CC641E3EA98 /* ExpoModulesProvider.swift */,
+			);
+			name = "sum-app-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,11 +161,13 @@
 			buildConfigurationList = 5142015A2437B4B40078DB4F /* Build configuration list for PBXNativeTarget "sum-app-macOS" */;
 			buildPhases = (
 				1A938104A937498D81B3BD3B /* [CP] Check Pods Manifest.lock */,
+				DA26592673B4F23CB9094FF6 /* [Expo] Configure project */,
 				514201452437B4B30078DB4F /* Sources */,
 				514201462437B4B30078DB4F /* Frameworks */,
 				514201472437B4B30078DB4F /* Resources */,
 				381D8A6E24576A4E00465D17 /* Bundle React Native code and images */,
 				EC973A0F1BAF5A7586587E6A /* [CP] Copy Pods Resources */,
+				B33DAC04F06F5F19B03865EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +290,43 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native-macos/scripts/react-native-xcode.sh\n";
 		};
+		B33DAC04F06F5F19B03865EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sum-app-macOS/Pods-sum-app-macOS-frameworks.sh",
+				"${PODS_ROOT}/hermes-engine/destroot/Library/Frameworks/macosx/hermes.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sum-app-macOS/Pods-sum-app-macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA26592673B4F23CB9094FF6 /* [Expo] Configure project */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[Expo] Configure project";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-sum-app-macOS/expo-configure-project.sh\"\n";
+		};
 		EC973A0F1BAF5A7586587E6A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,6 +369,7 @@
 			files = (
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
+				F4201ADD238AE82876E5965D /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +401,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "sum-app";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -363,6 +423,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "sum-app";
 				SWIFT_VERSION = 5.0;
@@ -386,6 +447,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "sum-app";
 				SDKROOT = macosx;
@@ -409,6 +471,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "sum-app";
 				SDKROOT = macosx;
@@ -479,7 +542,7 @@
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
-				USE_HERMES = false;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -537,7 +600,7 @@
 				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
-				USE_HERMES = false;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

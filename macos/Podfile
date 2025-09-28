@@ -5,12 +5,27 @@ require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
 # https://github.com/react-native-community/cli/pull/2547
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
+# https://docs.expo.dev/bare/installing-expo-modules/
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+
+ENV['RCT_NEW_ARCH_ENABLED'] = '1'
 ENV['REACT_NATIVE_OVERRIDE_HERMES_DIR'] = File.expand_path('../node_modules/react-native-node-api/hermes', __dir__)
 
 prepare_react_native_project!
 
 target 'sum-app-macOS' do
   platform :macos, '11.0'
+
+  # https://docs.expo.dev/bare/installing-expo-modules/
+  use_expo_modules!
+  post_integrate do |installer|
+    begin
+      expo_patch_react_imports!(installer)
+    rescue => e
+      Pod::UI.warn e
+    end
+  end
+
   use_native_modules!
 
   # Flags change depending on the env values.
@@ -18,7 +33,7 @@ target 'sum-app-macOS' do
 
   use_react_native!(
     :path => '../node_modules/react-native-macos',
-    :hermes_enabled => false,
+    :hermes_enabled => true,
     :fabric_enabled => ENV['RCT_NEW_ARCH_ENABLED'] == '1',
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
