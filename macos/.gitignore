@@ -1,2 +1,8 @@
 # CocoaPods
 Pods/
+
+# Expo
+.xcode.env.local
+
+# Codegen
+build
