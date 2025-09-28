@@ -1,6 +1,8 @@
 require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
+ENV['REACT_NATIVE_OVERRIDE_HERMES_DIR'] = File.expand_path('../node_modules/react-native-node-api/hermes', __dir__)
+
 prepare_react_native_project!
 
 target 'sum-app-macOS' do
