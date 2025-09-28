@@ -6,11 +6,13 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
+    "macos": "rnc-cli run-macos",
     "web": "expo start --web",
     "postinstall": "patch-package"
   },
   "dependencies": {
     "@nativescript/ios-node-api": "file:../napi-ios/packages/ios",
+    "@nativescript/macos-node-api": "file:../napi-ios/packages/macos",
     "@react-native-community/cli": "~15.0.1",
     "@react-native-community/cli-platform-ios": "~15.0.1",
     "expo": "~53.0.17",
