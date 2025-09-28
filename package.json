@@ -14,7 +14,8 @@
     "expo": "~53.0.17",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
-    "react-native": "0.79.5",
+    "react-native": "0.79.6",
+    "react-native-macos": "0.79.0",
     "react-native-node-api": "file:../react-native-node-api-modules/packages/host/react-native-node-api-0.3.2.tgz"
   },
   "devDependencies": {
@@ -22,6 +23,11 @@
     "@types/react": "~19.0.10",
     "patch-package": "^8.0.0",
     "typescript": "~5.8.3"
+  },
+  "overrides": {
+    "react-native-node-api": {
+      "react-native": "0.79.6"
+    }
   },
   "private": true
 }
