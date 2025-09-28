@@ -1,4 +1,8 @@
 require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
+
+# Assumes "@react-native-community/cli-platform-ios": "~15.0.1".
+# The native_modules.rb was moved to core from 15.1.0:
+# https://github.com/react-native-community/cli/pull/2547
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 ENV['REACT_NATIVE_OVERRIDE_HERMES_DIR'] = File.expand_path('../node_modules/react-native-node-api/hermes', __dir__)
