@@ -1,4 +1,4 @@
-import "./init-nativescript";
+// import "./init-nativescript";
 import { registerRootComponent } from "expo";
 
 import App from "./App";

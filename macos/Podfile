@@ -4,7 +4,7 @@ require "../node_modules/react-native-macos/scripts/cocoapods/autolinking.rb"
 require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
 
 ENV['RCT_NEW_ARCH_ENABLED'] = '1'
-ENV['REACT_NATIVE_OVERRIDE_HERMES_DIR'] = File.expand_path('../node_modules/react-native-node-api/hermes', __dir__)
+# ENV['REACT_NATIVE_OVERRIDE_HERMES_DIR'] = File.expand_path('../node_modules/react-native-node-api/hermes', __dir__)
 
 prepare_react_native_project!
 
